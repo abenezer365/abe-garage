@@ -1,0 +1,36 @@
+.dashboard {
+  width: 100%;
+  display: flex; 
+}
+[data-theme='light'] .dashboard {
+    background-color: #f5f5f5;
+}
+[data-theme='dark'] .dashboard {
+    background-color: #141A28;
+}
+/* Sidebar */
+.pannel {
+  width: 20vw;
+  height: 100vh;
+}
+.body{
+  width: 80%;
+  height: 100%;
+  padding: 10px;
+}
+.none {
+  display: none;
+}
+/* Body */
+.pannel.none + .body {
+  width: 100%;
+}
+@media (max-width:700px){
+    .pannel{
+        display: none;
+    }
+    .body {
+      width: 100%;
+    }
+   
+}

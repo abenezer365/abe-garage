@@ -1,0 +1,161 @@
+.profile {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.head {
+  position: relative;
+  height: 100vh;
+  width: 50%;
+  overflow: hidden;
+}
+
+/* This will hold the flipped and darkened background */
+.head::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(https://www.team-bhp.com/sites/default/files/pictures2023/wooden-interior-1.jpg);
+  background-size: cover;
+  background-position: center;
+  transform: scaleX(-1); 
+  filter: brightness(40%);
+  z-index: -1; 
+}
+
+.head .contents {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color:white;
+}
+.head .contents h1 {
+    font-size: 3rem;
+}
+.head .contents p {
+    font-size: 1rem;
+    color: rgb(175, 175, 175);
+}
+.container {
+  padding: 15vh 0;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.login{
+    padding: 15px 30px;
+    background-color: var(--secondary-brand-color);
+    color: white;
+    font-size: 17px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    display: flex;
+    margin: 10px;
+    justify-self: center;
+    transition: 0.3s ease-in-out;
+}
+.login:hover{
+   background-color:var(--primary-brand-color);
+   cursor: pointer;
+}
+.card {
+  /* background-color: var(--low-accent-color); */
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  /* box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.226); */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+  object-fit: cover;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.email {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.infoGrid div {
+  background: var(--bg-color);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--low-accent-color);
+}
+
+.infoGrid span:first-child {
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-right: 0.3rem;
+}
+
+.badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.active {
+  background-color: #28a74520;
+  color: #28a745;
+  border: 1px solid #28a74570;
+}
+
+.inactive {
+  background-color: #dc354520;
+  color: #dc3545;
+  border: 1px solid #dc354570;
+}
+
+
+@media (max-width: 500px) {
+    .profile {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container {
+    padding: 2vh 0;
+    }
+    .head {
+        width: 100%;
+        height: 20vh;
+    }
+    .head .contents h1 {
+    font-size: 1.7rem;
+}
+    .head .contents p {
+        font-size: 0.6rem;
+        color: rgb(175, 175, 175);
+    }
+}

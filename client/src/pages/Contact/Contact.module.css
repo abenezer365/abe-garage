@@ -1,0 +1,144 @@
+.head {
+  position: relative;
+  height: 40vh;
+  overflow: hidden;
+}
+
+/* This will hold the flipped and darkened background */
+.head::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(https://cdn.pixabay.com/photo/2018/06/28/22/14/car-3504910_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: -1; 
+}
+.head .contents {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color:white;
+}
+.head .contents h1 {
+    font-size: 3rem;
+}
+.head .contents p {
+    font-size: 1rem;
+    color: rgb(175, 175, 175);
+}
+.appointment {
+  padding: 5vh 10vw;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.book {
+  padding: 30px 40px;
+  background-color: red;
+  color: white;
+}
+.book .top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.book .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.book button{
+  padding: 20px 40px;
+  background-color: white;
+  color: red;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;  
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.book button:hover {
+   background-color: rgb(202, 0, 0);
+  color: white;
+}
+.address {
+  display: flex;
+  justify-content: space-between;
+    align-items: center;
+  padding: 5vh 10vw;
+  gap: 30px;
+}
+.contact iframe{
+    border: none;
+    width: 40vw;
+    height: 60vh;
+    border-bottom: 8px solid rgb(255, 0, 0);
+    border-right: 8px solid rgb(255, 0, 0);
+}
+.contact .address h1{
+    color: var(--accent-color);
+    font-size: 30px;
+}
+.contact .address h4 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+.contact .box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.contact .box .txt {
+  display: flex;
+  flex-direction: column;
+}
+.contact .box .txt h5 {
+  font-weight: bold;
+  color: var(--text-color);
+}
+.contact .box .txt p {
+  color: var(--text-color);
+}
+.contact .box svg{
+    font-size: 2rem;
+     opacity: 0.8;
+  font-weight: 300;
+}
+[data-theme="light"] .contact .box svg {
+  color: #ff0000; 
+}
+[data-theme="dark"] .contact .box svg {
+  color: #ffee00; 
+  opacity: 1;
+}
+
+@media (max-width: 500px) {
+    .head {
+        height: 30vh;
+    }
+    .head .contents h1 {
+    font-size: 1.7rem;
+}
+    .head .contents p {
+        font-size: 0.6rem;
+        color: rgb(175, 175, 175);
+    }
+    appointment .bottom {
+          flex-direction: column;
+          align-items: center;
+  
+      }
+    .appointment {
+        padding: 4vh 10vw;
+    }
+    .appointment .book {
+        padding: 20px 30px;
+    }
+}

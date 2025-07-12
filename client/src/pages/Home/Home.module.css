@@ -1,0 +1,476 @@
+
+.hero_container{
+    color: white;
+    background-image: url('../../assets/hero_laptop.jpg');
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    height: 90vh;
+    position: relative;
+}
+.hero, .tag2 .content{
+    position: absolute;
+    top: 35%;
+    left: 15%;
+}
+.home .play{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.home .texts{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.788);
+    margin-left: 10px;
+}
+.red{
+    display: block;
+    width: 70px;
+    height: 2px;
+    background-color: rgb(255, 0, 0);
+}
+.top{
+    display: flex;
+    gap: 5px;
+    align-items: flex-end;
+}
+.home .hero h1, .tag2 .content h1{
+    font-size: 50px;
+    font-weight: 800;
+    margin: 10px 0;
+    line-height: 55px;
+}
+.home .hero svg, .tag2 .content svg{
+    background-color: rgb(255, 0, 0);
+    padding: 7px;
+    border-radius: 100%;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.workshop .left img{
+    width: 200px;
+    height: 350px;
+    object-fit: cover;
+    margin-left: 5px;
+}
+.workshop{
+    display: flex;
+    padding: 10vh 10vw;
+    align-items: center;
+}
+.workshop .left {
+    width: 50%;
+    position: relative;
+}
+.workshop .right {
+    width: 50%;
+}
+.workshop .left .year {
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+    padding: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.205);
+}
+.workshop .left .year h1{
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0;
+    text-align: center;
+}
+.workshop .left .year p{
+    font-size: 12px;
+    margin: 0;
+}
+.workshop .right .top{
+    color: var(--accent-color);
+    font-weight: 600;
+}
+.workshop .right h2{
+    font-weight: 700;
+    font-size: 30px;
+}
+.workshop .right .description{
+    font-size: 15px;
+    opacity: 0.8;
+}
+.services{
+  padding: 5vh 10vw;
+  background: repeating-linear-gradient(
+    -45deg,                          /* Diagonal direction */
+    var(--low-accent-color),           /* Line color */
+    var(--low-accent-color) 2px,       /* Line thickness */
+    transparent 1px,
+    transparent 5px  
+                 /* Space between lines */
+  );
+  
+}
+.services .title{
+    display: flex;
+    align-items: flex-end;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+.service svg{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 40px;
+  opacity: 0.3;
+}
+.services_container{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.service{
+  width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  background-color: rgba(233, 233, 233, 0.11);
+  backdrop-filter: blur(5px);
+  border-bottom: 3px solid rgb(255, 81, 0);
+  position: relative;
+}
+.service a{
+  opacity: 0.8;  
+  font-size: 13px;
+  position: absolute;
+  bottom: 5px;
+}
+.service h3{
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--accent-color);
+}
+.service p{
+  font-size: 14px;
+  margin: 0;
+}
+[data-theme="light"] .service {
+  background-color: #ffffff;
+}
+[data-theme="light"] .services {
+  background-color: #ebebeb;
+}
+[data-theme="dark"] .services {
+  background-color: #070707;
+}
+[data-theme="dark"] .service {
+  background-color: #111111;
+}
+.tag{
+  display: flex;
+  justify-content: space-between;
+  background-color: red;
+  height: 60vh;
+  color: white;
+}
+.tag .left{
+    padding: 0 5vw;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.tag .right {
+  width: 50%;
+}
+.tag .right img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tag h2{
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+}
+.tag p{
+    font-size: 15px;
+    opacity: 0.8;
+    line-height: 25px;
+}
+
+/* Chat things */
+.why {
+  padding: 5vh 10vw;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.left {
+  flex: 1;
+  min-width: 320px;
+}
+
+.right {
+  flex: 1;
+  min-width: 320px;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.line {
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin-top: 6px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  padding-top: 20px;
+  padding-right: 30px;
+}
+
+.whyList {
+  list-style: none;
+  padding-top: 30px;
+  padding-left: 0;
+}
+
+.whyItem {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 0;
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+}
+.whyItem svg {
+  color: var(--secondary-brand-color);
+  margin-right: 10px;
+  font-size: 40px;
+}
+.subheading {
+  font-size: 22px;
+  color: var(--accent-color);
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
+.additionalList {
+  list-style: none;
+  padding: 0;
+  columns: 2;
+  column-gap: 40px;
+}
+
+.additionalItem {
+  font-size: 15px;
+  padding: 6px 0;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.additionalItem:hover {
+  color: var(--accent-color);
+  cursor: pointer;
+}
+.tag2{
+   color: white;
+    background-image: url('../../assets/oil.png');
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    height: 80vh;
+    position: relative;
+}
+/* Chat things end */
+
+/* Apppointment */
+.appointment {
+  padding: 5vh 10vw;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.book {
+  padding: 30px 40px;
+  background-color: red;
+  color: white;
+}
+.book .top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.book .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.book button{
+  padding: 20px 40px;
+  background-color: white;
+  color: red;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;  
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.book button:hover {
+   background-color: rgb(202, 0, 0);
+  color: white;
+}
+
+@media (max-width: 600px) {
+.hero_container {
+  background-image: url('../../assets/hero_mobile.jpg');
+}
+.tag{
+  flex-direction: column;
+  height: 100vh;
+}
+.tag .right img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.tag .left{
+    width: 80%;
+    padding: 2vw;
+}
+.tag .right {
+    width: 100%;
+}
+.tag .right img{
+    height: 300px;
+}
+.tag h2{
+    font-size: 20px ;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+}
+.tag p{
+    font-size: 12px;
+ }
+    .workshop{
+        flex-direction: column;
+        padding: 5vh 2vw;
+    }
+    .workshop .left{
+        width: 100%;       
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+    .workshop .right{
+       margin-top: 20px;
+        width: 80%;      
+    }
+    .workshop .right h2{
+        line-height: 30px; 
+        margin: 10px 0; 
+    }
+    .workshop .right .description{
+        font-size: 13px;   
+    }
+    .workshop .left img{
+        width: 130px;
+        height: 300px;
+    }
+    .workshop .left .year {
+        right: 10%;
+        bottom: -5%;
+        width: 90px;
+    }
+    .workshop .left .year h1{
+        font-size: 30px;
+    }
+    .workshop .left .year p{
+       text-align: center;
+    }
+    .home .hero h1, .tag2 .content h1{
+        font-size: 30px;
+        line-height: 35px;
+    }
+    .red{
+        width: 50px;
+    }
+    .home .hero .texts p, .tag2 .content p{
+      font-size: 10px;
+    }
+    .home .hero svg, .tag2 .content svg{
+      font-size: 30px;
+      padding: 5px;
+    }
+    .tag2{
+      height: 50vh;
+    }
+    .additionalList {
+      columns: 1;
+    }
+    .whyItem {
+        font-size: 15px;
+    }
+    .why .description {
+        font-size: 14px;
+    }
+    .why .left {
+        min-width: 100%;
+    }
+    .why .right {
+        min-width: 100%;
+      }
+      .home .tag2 h1 {
+        font-size: 25px;
+        line-height: 30px;
+      }
+      .tag2 .content {
+        top: 20%;
+        left: 10%;
+      }
+      .appointment .bottom {
+          flex-direction: column;
+          align-items: center;
+  
+      }
+    .appointment {
+        padding: 4vh 10vw;
+    }
+    .appointment .book {
+        padding: 20px 30px;
+    }
+    .tag .left h2{
+      font-size: 20px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .tag .left p{
+      padding: 5px 10px;
+        font-size: 12px;
+    }
+}

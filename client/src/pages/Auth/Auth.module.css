@@ -1,0 +1,115 @@
+.logo{
+    position: absolute;
+    top: 15px;
+    left: 40%;
+    width: 200px;
+}
+.authWrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+  transition: background 0.3s ease;
+  padding: 1rem;
+}
+
+.authForm {
+  background: var(--low-accent-color);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+[data-theme="dark"] .authForm {  
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+[data-theme="light"] .authForm {  
+ background: rgb(238, 238, 238);
+}
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+.inputGroup {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: var(--text-color);
+}
+
+.inputGroup input {
+  padding: 0.75rem;
+  border: 1px solid var(--low-accent-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.loginBtn {
+  width: 100%;
+  background: rgb(255, 0, 0);
+  color: white;
+  padding: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+.loginBtn:hover {
+  background: rgb(187, 0, 0);
+}
+
+.footerText {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.footerText a {
+  color: var(--secondary-brand-color);
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.error {
+  background-color: #ff4d4d1c;
+  border: 1px solid #ff4d4d80;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}

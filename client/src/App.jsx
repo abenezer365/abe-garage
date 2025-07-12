@@ -1,9 +1,12 @@
-
-
+import React from 'react'
+import Router from './Router'
+import { ContextProvider } from './components/Context'
 function App() {
   return (
     <>
-      <p>Abe Garage</p>
+    <ContextProvider>
+      <Router />
+    </ContextProvider>
     </>
   )
 }

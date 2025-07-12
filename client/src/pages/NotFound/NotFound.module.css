@@ -1,0 +1,80 @@
+.wrapper {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0 30px 0;
+}
+
+.content {
+  max-width: 500px;
+  animation: floatIn 1s ease-in-out;
+}
+
+.rocket {
+  font-size: 48px;
+  color: var(--accent-color);
+  animation: bounce 2s infinite ease-in-out;
+  margin-bottom: 20px;
+}
+
+.code {
+  font-size: 96px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: var(--accent-color);
+}
+
+.message {
+  font-size: 26px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 20px 0;
+}
+
+.homeButton {
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  padding: 10px 24px;
+  color: var(--text-color);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.homeButton:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes floatIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
