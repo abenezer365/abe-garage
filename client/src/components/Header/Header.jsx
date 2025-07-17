@@ -10,14 +10,16 @@ import { FaUser } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { FaWindowClose } from "react-icons/fa";
 import {Context} from '../Context'
+import { Type } from '../../utils/action.type';
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const {state, dispatch, toggleTheme} = useContext(Context)
-  const theme = state.theme
+  const {state, dispatch} = useContext(Context)
+  const theme = state?.theme
+  const toggleTheme = () => dispatch({ type: Type.TOGGLE_THEME });
     function toggleMenu() {
       setIsMenuOpen((prevState) => !prevState);
     }
-    const user = null; // Replace with actual user state management
+    const user = state.user;
   return (
     <>
       <header className={css.header}>
@@ -27,7 +29,7 @@ function Header() {
             <Link to="/profile">
             <div className={css.user}>
             <FaUser />
-            <p>Welcome: User</p>
+            <p>Welcome: {user?.role || 'Customer'}</p>
             </div>
             </Link>
             {theme === 'light' ? <IoMoon onClick={toggleTheme} /> : <IoMdSunny onClick={toggleTheme} />} 

@@ -49,6 +49,17 @@
   display: flex;
   flex-direction: column;
 }
+.passwordContainer{
+  position: relative;
+}
+.passwordContainer svg{
+  position: absolute;
+  top: 60%;
+  right: 15px;
+  font-size: 20px;
+  opacity: 0.5;
+  cursor: pointer;
+}
 
 .inputGroup label {
   font-weight: 500;
@@ -109,6 +120,17 @@
   margin-bottom: 1rem;
   border-radius: 8px;
   color: #ff4d4d;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+.message {
+  background-color: #2bff002a;
+  border: 1px solid #53ff4d80;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  color: #58ff42;
   font-size: 0.9rem;
   font-weight: 500;
   text-align: center;

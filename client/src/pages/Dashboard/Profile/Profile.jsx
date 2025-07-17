@@ -1,24 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import css from './Profile.module.css'
 import { Link } from 'react-router-dom'
+import { Context } from '../../../components/Context';
 function Profile() {
-  const user = {
-  firstName: "Abenezer",
-  lastName: "Zewge",
-  email: "abenezer@zewge.com",
-  role: "Admin",
-  registeredAt: "2025-07-11",
-  active: true,
-  id: "U-8741"
-};
-
+  const {state} = useContext(Context)
+  const user = state.user
+  const iso = user.created_at;
+  const date = new Date(iso);
+  const registeredAt = date.toLocaleDateString();
   return (
     <>
      <div className={css.profile}>
       <div className={css.head}>
         <div className={css.contents}>
           <h1>Profile</h1>
-          <p> <Link to="/">Home</Link> &gt; <Link to="/dashboard">Dashboard</Link> &gt; Profile</p>
+          <p> <Link to="/">Home</Link> &gt; Profile</p>
         </div>
       </div>
        <div className={css.container}>
@@ -30,21 +26,21 @@ function Profile() {
             className={css.avatar}
           />
           <div>
-            <h2 className={css.name}>{user.firstName} {user.lastName}</h2>
+            <h2 className={css.name}>{user.first_name} {user.last_name}</h2>
             <p className={css.email}>{user.email}</p>
           </div>
         </div>
 
         <div className={css.infoGrid}>
           <div><span>Role:</span> {user.role}</div>
-          <div><span>Registered:</span> {user.registeredAt}</div>
+          <div><span>Registered:</span> {registeredAt}</div>
           <div>
             <span>Status:</span>
-            <span className={`${css.badge} ${user.active ? css.active : css.inactive}`}>
-              {user.active ? 'Active' : 'Inactive'}
+            <span className={`${css.badge} ${user.is_active === 1 ? css.active : css.inactive}`}>
+              {user.is_active === 1 ? 'Active' : 'Inactive'}
             </span>
           </div>
-          <div><span>User ID:</span> {user.id}</div>
+          <div><span>User ID:</span> {user.user_id}</div>
         </div>
       <button className={css.login}>Log Out</button>
       </div>

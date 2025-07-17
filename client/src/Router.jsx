@@ -9,10 +9,11 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import Profile from './pages/Profile/Profile';
 import Services from './pages/Services/Services';
 import Footer from './components/Footer/Footer';
+import Protected from './components/Protected';
+import MyOrder from './pages/MyOrder/MyOrder';
 function Router() {
    const location = useLocation();
-   const hidden = ['/dashboard', '/auth'];
-    const hideLayout = location.pathname.startsWith('/dashboard') || location.pathname === '/auth';
+   const hideLayout = location.pathname.startsWith('/dashboard') || location.pathname === '/auth';
   return (
     <>
      {!hideLayout && <Header />}
@@ -21,9 +22,10 @@ function Router() {
         <Route path="/auth" element={<Auth />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/dashboard/*" element={<Dashboard/>} />
-        <Route path="/profile" element={<Profile/>} />
+        <Route path="/dashboard/*" element={<Protected><Dashboard/></Protected>} />
+        <Route path="/profile" element={<Protected><Profile/></Protected>} />
         <Route path="/services" element={<Services/>} />
+        <Route path="/order/:order_hash" element={<MyOrder />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {!hideLayout && <Footer />}

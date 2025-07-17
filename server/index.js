@@ -1,17 +1,39 @@
 // modules
 import express from 'express'
 import cors from 'cors'
-import dotenv from 'dotenv'
-import connection from './config/databaseConfig.js'
-// .env support
-dotenv.config()
+import connection from './config/database.config.js'
+// Routes
+import userRouter from './routes/user.route.js'
+import customerRouter from './routes/customer.route.js'
+import serviceRouter from './routes/service.route.js'
+import vehicleRouter from './routes/vehicle.route.js'
+import orderRouter from './routes/order.route.js'
+import requestRouter from './routes/request.route.js';
+import invoiceRouter from './routes/invoice.route.js';
 
+// .env support
+import dotenv from 'dotenv'
+import auth from './auth/auth.middlewaire.js'
+dotenv.config()
 const PORT = process.env.PORT
 // express app
 const app = express()
+
 // middlewares
 app.use(cors())
+// Middleware to parse JSON
+app.use(express.json());
+// Middleware to parse form data
+app.use(express.urlencoded({ extended: true }));
 
+//API Routes
+app.use("/api/user", userRouter);
+app.use("/api/customer", auth ,customerRouter);
+app.use("/api/service", auth ,serviceRouter);
+app.use("/api/vehicle", auth ,vehicleRouter);
+app.use("/api/order", auth ,orderRouter);
+app.use('/api/request', auth,requestRouter);
+app.use('/api/invoice', auth, invoiceRouter);
 
 // successful connection message on get request to root
 app.get('/' , (req, res)=>{
@@ -50,7 +72,7 @@ const startServer = async () => {
   }
  //Start Listening
   const server = app.listen(PORT, () => {
-    console.log(`Listening on http://localhost:${PORT}`);
+    console.log(`🟢 Listening on http://localhost:${PORT}`);
   });
 
   // Handle server startup errors

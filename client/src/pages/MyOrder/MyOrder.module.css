@@ -1,0 +1,98 @@
+.wrapper {
+  max-width: 800px;
+  margin: 30px auto ;
+  padding: 2rem;
+  background: var(--low-accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 1rem;
+  box-shadow: 0 0 12px var(--low-accent-color);
+  font-family: "Segoe UI", sans-serif;
+  animation: fadeIn 0.5s ease-in;
+  color: var(--text-color);
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.section {
+  margin-bottom: 2rem;
+  border-bottom: 1px dashed var(--accent-color);
+  padding-bottom: 1rem;
+}
+
+.label {
+  font-weight: 600;
+  margin-right: 0.3rem;
+  display: inline-block;
+  min-width: 150px;
+}
+
+.value {
+  font-weight: 400;
+  display: inline-block;
+}
+
+.serviceList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.serviceItem {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 2rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 0.85rem;
+}
+.completed {
+  background-color: #059400;
+  color: #ffffff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.inProgress {
+  background-color: #ffe600;
+  color: #000000;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.review {
+  background-color: #cecece;
+  color: #000000;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width:700px){
+    .wrapper{
+        padding: 30px ;
+        max-width: 350px;
+    }
+}

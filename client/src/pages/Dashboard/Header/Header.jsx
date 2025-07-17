@@ -10,8 +10,11 @@ import { FaHome } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import {Context} from '../../../components/Context'
 import Sidebar from '../Sidebar/Sidebar'
+import { Type } from '../../../utils/action.type';
 function Header({value} ) {
- const {state, dispatch, toggleTheme} = useContext(Context)
+
+ const {state, dispatch} = useContext(Context)
+const toggleTheme = () => dispatch({ type: Type.TOGGLE_THEME });
  const [showSidebar, setShowSidebar] = value;
   const [mobilebar, setMobilebar] = useState(false)
   const theme = state.theme
@@ -31,7 +34,7 @@ function Header({value} ) {
   function toggleMenu() {
     setShowSidebar((prevState) => !prevState);
   }
-    const sidebarRef = useRef();
+  const sidebarRef = useRef();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -40,9 +43,7 @@ function Header({value} ) {
        setMobilebar(() => false); 
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
-    
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -52,14 +53,12 @@ function Header({value} ) {
     <div className={css.header}>
       <div className={css.search}>
       <div className={css.container}>
-        <input type="text" placeholder="Search..." />  
-        <FaSearch />
+        <Link to="/"><FaHome /></Link>
       </div>        
       </div>
       <div className={css.icons}>
         <h1></h1>
         <span className={css.time}>{formattedTime}</span>
-        <Link to="/"><FaHome /></Link>
         {
           theme === 'dark' ? <IoMdSunny onClick={toggleTheme} /> : <IoMoon onClick={toggleTheme}/>
         }

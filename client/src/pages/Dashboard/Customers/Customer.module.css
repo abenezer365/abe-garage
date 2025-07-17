@@ -1,0 +1,142 @@
+/* Orders.module.css */
+.container {
+  padding: 2rem;
+  overflow-x: auto;
+  min-height: 100vh;
+}
+
+.heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.tableWrapper {
+  border-radius: 8px;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background-color: var(--card-bg);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.80rem;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table th {
+  background-color: var(--header-bg);
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.table td {
+  color: var(--text-color);
+}
+
+.completed {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.inProgress {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.review {
+  background-color: #e2e3e5;
+  color: #383d41;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.actions{
+    font-size: 15px;
+}
+.editIcon {
+  margin-right: 10px;
+  cursor: pointer;
+  color: var(--accent-color);
+  transition: transform 0.2s;
+}
+
+.editIcon:hover {
+    transform: scale(1.1);
+}
+
+.deleteIcon {
+  cursor: pointer;
+  color: #dc3545;
+  transition: transform 0.2s;
+}
+
+.deleteIcon:hover {
+  transform: scale(1.1);
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.activate {
+  background-color: #15ff008c;
+  padding: 2px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+.deactivate {
+  background-color: #e6e6e688;
+  padding: 2px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.active{
+  color: #0c9400 ;
+  font-weight: 600;
+}
+.inactive{
+  font-weight: 600;
+  color: red;
+}
+/* Theme Variables */
+:root[data-theme='light'] {
+  --card-bg: #ffffff;
+  --header-bg: #f1f1f1;
+  --text-color: #212529;
+  --border-color: #dee2e6;
+  --accent-color: #007bff;
+}
+
+:root[data-theme='dark'] {
+  --card-bg: #1e1e2f;
+  --header-bg: #2c2c3c;
+  --text-color: #f1f1f1;
+  --border-color: #444;
+  --accent-color: #4da3ff;
+}

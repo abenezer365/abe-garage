@@ -1,3 +1,144 @@
-.orders{
-    min-height: 100vh;
+/* Orders.module.css */
+.container {
+  padding: 2rem;
+  overflow-x: auto;
+  min-height: 100vh;
+}
+
+.heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.tableWrapper {
+  border-radius: 8px;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background-color: var(--card-bg);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.65rem;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table th {
+  background-color: var(--header-bg);
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.table td {
+  color: var(--text-color);
+}
+
+.completed {
+  background-color: #047700;
+  color: #ffffff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 10px;
+  display: inline-block;
+  width: max-content;
+}
+
+.inProgress {
+  background-color: #ffe600c7;
+  color: #000000;
+  padding: 0.3rem 0.6rem;
+  width: max-content;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 10px;
+  display: inline-block;
+}
+
+.review {
+  width: max-content;
+  background-color: #e2e3e5;
+  color: #383d41;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-weight: 500;
+    font-size: 10px;
+  display: inline-block;
+}
+.generate, .send {
+  background-color: #85858588;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.mark, .progress {
+  width: max-content;
+  cursor: pointer;
+  background-color: #4c00ff41;
+  text-align: center;
+  padding: 2px 5px;
+  font-size: 10px;
+  border-radius: 3px;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.actions{
+    font-size: 15px;
+}
+.editIcon {
+  margin-right: 10px;
+  cursor: pointer;
+  color: var(--accent-color);
+  transition: transform 0.2s;
+}
+
+.editIcon:hover {
+    transform: scale(1.1);
+}
+
+.deleteIcon {
+  cursor: pointer;
+  color: #dc3545;
+  transition: transform 0.2s;
+}
+
+.deleteIcon:hover {
+  transform: scale(1.1);
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+/* Theme Variables */
+:root[data-theme='light'] {
+  --card-bg: #ffffff;
+  --header-bg: #f1f1f1;
+  --text-color: #212529;
+  --border-color: #dee2e6;
+  --accent-color: #007bff;
+}
+
+:root[data-theme='dark'] {
+  --card-bg: #1e1e2f;
+  --header-bg: #2c2c3c;
+  --text-color: #f1f1f1;
+  --border-color: #444;
+  --accent-color: #4da3ff;
 }

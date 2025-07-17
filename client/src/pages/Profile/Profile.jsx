@@ -1,17 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import css from './Profile.module.css'
 import { Link } from 'react-router-dom'
+import { Context } from '../../components/Context';
 function Profile() {
-  const user = {
-  firstName: "Abenezer",
-  lastName: "Zewge",
-  email: "abenezer@zewge.com",
-  role: "Admin",
-  registeredAt: "2025-07-11",
-  active: true,
-  id: "U-8741"
-};
+  const {state} = useContext(Context)
+  const user = state.user
 
+  const iso = user.created_at;
+  const date = new Date(iso);
+  const registeredAt = date.toLocaleDateString();
+  const status = user.is_active == 1 ? true : false
   return (
     <>
      <div className={css.profile}>
@@ -30,23 +28,23 @@ function Profile() {
             className={css.avatar}
           />
           <div>
-            <h2 className={css.name}>{user.firstName} {user.lastName}</h2>
+            <h2 className={css.name}>{user.first_name} {user.last_name}</h2>
             <p className={css.email}>{user.email}</p>
           </div>
         </div>
 
         <div className={css.infoGrid}>
           <div><span>Role:</span> {user.role}</div>
-          <div><span>Registered:</span> {user.registeredAt}</div>
+          <div><span>Registered:</span> {registeredAt}</div>
           <div>
             <span>Status:</span>
-            <span className={`${css.badge} ${user.active ? css.active : css.inactive}`}>
-              {user.active ? 'Active' : 'Inactive'}
+            <span className={`${css.badge} ${status === true ? css.active : css.inactive}`}>
+              {status === true ? 'Active' : 'Inactive'}
             </span>
           </div>
-          <div><span>User ID:</span> {user.id}</div>
+          <div><span>User ID:</span> {user.user_id}</div>
         </div>
-      <button className={css.login}>Log Out</button>
+      <Link to="/dashboard/setting"><button className={css.login}>Setting</button> </Link>
       </div>
     </div>
     </div>

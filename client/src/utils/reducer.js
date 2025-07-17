@@ -1,8 +1,8 @@
 import { Type } from './action.type';
 
 export const InitialState = {
-  user:[],
   theme : 'dark',
+  user:[],
 };
 
 export const Reducer = (state, action) => {
