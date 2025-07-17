@@ -58,7 +58,7 @@
 [data-theme='dark'] .container input, .container textarea {
     background-color:#1B2539;
 }
-[data-theme='light'].container textarea,.container input {
+[data-theme='light'] .container textarea,.container input {
     background-color:#ecececc9;
 }
 button {

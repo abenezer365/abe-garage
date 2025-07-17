@@ -15,6 +15,7 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const {state, dispatch} = useContext(Context)
   const theme = state?.theme
+  const role = state?.user?.role
   const toggleTheme = () => dispatch({ type: Type.TOGGLE_THEME });
     function toggleMenu() {
       setIsMenuOpen((prevState) => !prevState);
@@ -46,7 +47,9 @@ function Header() {
           <Link to="/about"><p>About</p></Link>
           <Link to="/contact"><p>Contact</p></Link>
           <Link to="/services"><p>Services</p></Link>
-          <Link to="/dashboard"><p>Dashboard</p></Link>
+          {['admin', 'manager'].includes(role) ?   
+              (<Link to="/dashboard"><p>Dashboard</p></Link>)
+            :  (<Link to="/dashboard/orders"><p>Dashboard</p></Link>)}
           {user ? (<a className={css.right_container} href="tel:+25111555987" ><button className={css.login}>Call</button></a>): (<Link className={css.right_container} to="/auth"><button className={css.login}>Login</button></Link>)}
         </div>
         <IoMenu onClick={toggleMenu} className={css.menu}/>

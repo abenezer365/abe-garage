@@ -230,10 +230,10 @@ export async function markPayed(req, res) {
                 </tr>
                 <tr>
                   <td style="padding: 10px; font-weight: bold;">Order Secret:</td>
-                  <td style="padding: 10px; color: #EE0D09; font-weight: bold; font-size: 1.2em;"><a href="http://localhost/order/">${order_hash}</a></td>
+                  <td style="padding: 10px; color: #EE0D09; font-weight: bold; font-size: 1.2em;"><a href="https://abegarage.abenezerzewge.com/order/">${order_hash}</a></td>
                 </tr>
               </table>
-              <a href="http://localhost/order/${order_hash}" style="margin-top: 30px;">http://localhost/order/${order_hash}</a>
+              <a href="https://abegarage.abenezerzewge.com/order/${order_hash}" style="margin-top: 30px;">https://abegarage.abenezerzewge.com/order/${order_hash}</a>
               <p style="margin-top: 30px;">Click the link below and save the link, you can check the status of your order everytime you want.</p>
               <p>If you have any questions, feel free to contact us.</p>
               <a href="mailto:info.abegarage@gmail.com" style="display: inline-block; margin-top: 20px; padding: 12px 20px; background-color: #EE0D09; color: white; text-decoration: none; border-radius: 4px;">Contact Support</a>

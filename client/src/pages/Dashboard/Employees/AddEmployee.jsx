@@ -61,6 +61,7 @@ function AddEmployee() {
         showConfirmButton: true,
         timerProgressBar: true
       });
+      console.log(error)
     } finally {
       setLoading(false);
     }

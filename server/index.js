@@ -10,10 +10,11 @@ import vehicleRouter from './routes/vehicle.route.js'
 import orderRouter from './routes/order.route.js'
 import requestRouter from './routes/request.route.js';
 import invoiceRouter from './routes/invoice.route.js';
-
+//Authentication and authorization
+import authenticate from './auth/authenticate.middlewaire.js'
+import authorize from './auth/authorize.middlewaire.js'
 // .env support
 import dotenv from 'dotenv'
-import auth from './auth/auth.middlewaire.js'
 dotenv.config()
 const PORT = process.env.PORT
 // express app
@@ -28,12 +29,12 @@ app.use(express.urlencoded({ extended: true }));
 
 //API Routes
 app.use("/api/user", userRouter);
-app.use("/api/customer", auth ,customerRouter);
-app.use("/api/service", auth ,serviceRouter);
-app.use("/api/vehicle", auth ,vehicleRouter);
-app.use("/api/order", auth ,orderRouter);
-app.use('/api/request', auth,requestRouter);
-app.use('/api/invoice', auth, invoiceRouter);
+app.use("/api/customer", authenticate ,customerRouter);
+app.use("/api/service", authenticate ,serviceRouter);
+app.use("/api/vehicle", authenticate ,vehicleRouter);
+app.use("/api/order", authenticate ,orderRouter);
+app.use('/api/request', authenticate,requestRouter);
+app.use('/api/invoice', authenticate, invoiceRouter);
 
 // successful connection message on get request to root
 app.get('/' , (req, res)=>{

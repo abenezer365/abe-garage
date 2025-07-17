@@ -12,20 +12,30 @@ import { IoBagAdd } from "react-icons/io5";
 import { IoCarSportSharp } from "react-icons/io5";
 import { FaCar } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Context } from '../../../components/Context';
 function Sidebar() {   
+  const {state, dispatch} = useContext(Context)
+  const role = state?.user?.role
         return (
               <div className={css.sidebar}>
                   <div className={css.profile}>
-                    <h2>ADMIN</h2>
+                    <h2>
+                    {
+                      role === 'admin' ? 'ADMIN' : role === 'manager' ? 'MANAGER' : role === 'employee' ? 'EMPLOYEE' : 'MR. X'
+                    }
+                    </h2>
                     <img src="https://static.vecteezy.com/system/resources/thumbnails/009/636/683/small_2x/admin-3d-illustration-icon-png.png" alt="" />
                   </div>
                   <div className={css.routes}>
-                    <Link to="/dashboard/">     
-                    <div className={css.single}>
-                        <FaHome />
-                        <p>Dashboard</p>
-                    </div>
-                    </Link>
+                    {['admin', 'manager'].includes(role) && (
+                      <Link to="/dashboard/">     
+                      <div className={css.single}>
+                          <FaHome />
+                          <p>Dashboard</p>
+                      </div>
+                      </Link>  
+                    )}
                     <span>Data</span>
                      <Link to="/dashboard/orders">
                       <div className={css.single}>
@@ -33,12 +43,14 @@ function Sidebar() {
                         <p>Orders</p>
                     </div>
                     </Link>
-                   <Link to="/dashboard/employees">
-                     <div className={css.single}>
-                        <FaUsers />
-                        <p>Employees</p>
-                    </div>
-                    </Link>
+                    {['admin', 'manager'].includes(state.user?.role) && (
+                      <Link to="/dashboard/employees">
+                        <div className={css.single}>
+                            <FaUsers />
+                            <p>Employees</p>
+                        </div>
+                        </Link>  
+                    )}
                     <Link to="/dashboard/customers">
                      <div className={css.single}>
                        <RiCustomerServiceFill />

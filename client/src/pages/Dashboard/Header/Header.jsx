@@ -64,7 +64,7 @@ const toggleTheme = () => dispatch({ type: Type.TOGGLE_THEME });
         }
         <Link to="/dashboard/setting"><IoMdSettings /></Link>
         <Link to="/dashboard/profile"><FaUserCircle /></Link>
-        <IoMenu onClick={window.innerWidth >= 750 ? toggleMenu : toggleMobilebar} />        
+        <IoMenu onClick={window.innerWidth >= 850 ? toggleMenu : toggleMobilebar} />        
       </div>
     </div>
     {

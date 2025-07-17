@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-async function auth(req, res, next) {
+async function authenticate(req, res, next) {
   const authHeader = req.headers.authorization;     //EXPECTED 'Bearer Token'
 
 if (!authHeader || !authHeader.startsWith("Bearer ")) {
@@ -25,5 +25,5 @@ if (!authHeader || !authHeader.startsWith("Bearer ")) {
     }
 }
 
-export default auth;
+export default authenticate;
 

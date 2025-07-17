@@ -25,7 +25,7 @@ function Dashboard() {
           <Sidebar/>
         </div>      
     
-     <div className={css.body}>
+     <div className={css.body}> 
       <Header value={[showSidebar,setShowSidebar]}/>
       <Routes>
         <Route path="/" element={<Home />} />

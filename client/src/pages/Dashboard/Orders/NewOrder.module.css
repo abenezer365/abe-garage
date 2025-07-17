@@ -190,6 +190,7 @@
 .one {
   display: flex;
   flex-direction: column;
+  color: var(--text-color);
 }
 
 .services {
@@ -257,7 +258,6 @@
   font-size: 1rem;
   padding: 0.6rem 1rem;
   border-radius: 6px;
-  color: black;
   border: 1px solid var(--border-color);
   margin-top: 0.5rem;
 }

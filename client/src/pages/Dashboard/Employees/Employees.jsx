@@ -158,7 +158,7 @@ const handleDelete = async (user_id) => {
           </thead>
           <tbody>
             {employees.map((emp, index) => (
-              <tr key={emp.user_id}>
+              <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{emp.first_name} {emp.last_name}</td>
                 <td>{emp.email}</td>

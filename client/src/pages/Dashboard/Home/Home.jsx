@@ -32,10 +32,10 @@ function Home() {
 
         // Employee role count
         const roleCount = {};
-        employeeRes.data.users.forEach(user => {
+        employeeRes?.data?.users?.forEach(user => {
           roleCount[user.role] = (roleCount[user.role] || 0) + 1;
         });
-        const formattedRoles = Object.keys(roleCount).map(role => ({ role, count: roleCount[role] }));
+        const formattedRoles = Object.keys(roleCount)?.map(role => ({ role, count: roleCount[role] }));
         setEmployeeRoles(formattedRoles);
 
         // Mocked revenue per month
@@ -55,17 +55,19 @@ function Home() {
   }, []);
 
   // Pie chart (fallback if service name missing)
-  const pieData = orders.map((order, i) => ({
-    name: order.service_name || order.service_type || `Service ${i + 1}`,
-    value: parseFloat(order.order_total_price) || 1000
-  }));
+const pieData = Array.isArray(orders) ? orders?.map((order, i) => ({
+  name: order.service_name || order.service_type || `Service ${i + 1}`,
+  value: parseFloat(order.order_total_price) || 1000
+})) : [];
+
 
   // Composed chart
-  const ordersRevenueData = orders.slice(0, 6).map((order, i) => ({
-    name: order.customer_name || `Customer ${i + 1}`,
-    orders: 1,
-    revenue: parseFloat(order.order_total_price) || 1000
-  }));
+const ordersRevenueData = Array.isArray(orders) ? orders?.slice(0, 6).map((order, i) => ({
+  name: order.customer_name || `Customer ${i + 1}`,
+  orders: 1,
+  revenue: parseFloat(order.order_total_price) || 1000
+})) : [];
+
 
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -86,8 +88,8 @@ function Home() {
                 label
                 dataKey="value"
               >
-                {pieData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                {pieData?.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS?.[index % COLORS.length] || '#ccc'} />
                 ))}
               </Pie>
               <Tooltip />
@@ -99,7 +101,7 @@ function Home() {
         <div className={css.card}>
           <h3>Total Customers</h3>
           <ResponsiveContainer width="100%" height={250}>
-            <BarChart data={[{ name: 'Customers', total: customers.length }]}>
+            <BarChart data={[{ name: 'Customers', total: customers?.length }]}>
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip />
@@ -152,7 +154,7 @@ function Home() {
         <div className={css.card}>
           <h3>Employee Roles</h3>
           <ResponsiveContainer width="100%" height={250}>
-            <AreaChart data={employeeRoles}>
+            <AreaChart data={Array.isArray(employeeRoles) ? employeeRoles : []}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="role" />
               <YAxis />
